@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+  background-color: rgb(43, 183, 226);
+  color: aliceblue;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 20px 40px;
+  }
+}

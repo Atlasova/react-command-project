@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  gap: 7px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgba(182, 238, 255, 0.899);
+  &:hover {
+    color: rgb(243, 238, 240);
+  }
+}
+
+.active {
+  color: rgb(243, 238, 240);
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    gap: 15px;
+  }
+  .link {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .link {
+    font-size: 25px;
+  }
+}

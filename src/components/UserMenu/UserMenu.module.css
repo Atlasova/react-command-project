@@ -1,0 +1,32 @@
+.userMenu {
+  font-size: 12px;
+}
+.logoutBtn {
+  border-radius: 5px;
+  padding: 5px;
+  background: white;
+  border-style: none;
+  cursor: pointer;
+  color: rgb(43, 183, 226);
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  .userMenu {
+    font-size: 20px;
+  }
+  .logoutBtn {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .userMenu {
+    font-size: 25px;
+  }
+  .logoutBtn {
+    padding: 12px 15px;
+    font-size: 18px;
+  }
+}

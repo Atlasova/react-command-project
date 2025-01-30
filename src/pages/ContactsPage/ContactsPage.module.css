@@ -1,0 +1,32 @@
+.componentsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer {
+  border: 1px solid #242424;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  margin: 0px 10px 50px 10px;
+}
+.loading {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .searchContainer {
+    padding: 30px 40px;
+    width: 506px;
+    margin: 0px auto 50px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .componentsContainer {
+    display: flex;
+    flex-direction: unset;
+    margin-top: 50px;
+    margin-left: 100px;
+  }
+  .searchContainer {
+    margin: 50px auto;
+  }
+}

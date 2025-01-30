@@ -1,0 +1,20 @@
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactList:last-child {
+  margin-bottom: 20px;
+}
+
+.contactItem {
+  border: 2px solid #42c4f3;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: transparent;
+  margin: 0px 10px;
+}
+.noContacts {
+  text-align: center;
+}
