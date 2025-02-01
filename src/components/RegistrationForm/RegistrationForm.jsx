@@ -1,32 +1,36 @@
+//Sign Up Page 2 Розробник 2: Сторінки Автентифікації
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { register } from '../../redux/auth/operations';
 import css from './RegistrationForm.module.css';
 import * as Yup from 'yup';
+//вставить иконки
+//import { ReactComponent as OpenEyeIcon } from '../../images/icons/eye-slash.svg';
+//import { ReactComponent as ClosedEyeIcon } from '../../images/icons/eye.svg';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const initialValues = {
     email: '',
-    name: '',
     password: '',
+    repeatPassword: '',
   };
 
   const RegistrationFormSchema = Yup.object({
     email: Yup.string()
-      .required('This field is required!')
-      .min(3, 'Too short!')
-      .max(50, 'Too long!'),
-    name: Yup.string()
-      .required('This field is required!')
-      .min(3, 'Too short!')
-      .max(50, 'Too long!'),
-    password: Yup.string()
-      .required('This field is required!')
+      .required('Email is required.')
       .min(8, 'Too short!')
-      .max(50, 'Too long!'),
+      .max(64, 'Too long!'),
+    password: Yup.string()
+      .required('Password is required.')
+      .min(8, 'Too short!')
+      .max(64, 'Too long!'),
+    repeatPassword: Yup.string()
+      .required('Repeat password is required.')
+      .min(8, 'Too short!')
+      .max(64, 'Too long!'),
   });
 
   const handleSubmit = (values, options) => {
@@ -35,60 +39,59 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={RegistrationFormSchema}
-      >
-        <Form className={css.form}>
-          <h2 className={css.formTitle}>Register</h2>
-          <label className={css.fieldTitle}>Name</label>
-          <Field
-            name="name"
-            className={css.formField}
-            placeholder="Enter your name"
-          />
-          <ErrorMessage
-            name="name"
-            component="span"
-            className={css.errorMessage}
-          />
-          <label className={css.fieldTitle}>Email</label>
-          <Field
-            name="email"
-            className={css.formField}
-            placeholder="Enter your email"
-          />
-          <ErrorMessage
-            name="email"
-            component="span"
-            className={css.errorMessage}
-          />
-          <label className={css.fieldTitle}>Password</label>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={RegistrationFormSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form className={css.form}>
+        <h2 className={css.formTitle}>Sign Up</h2>
+        <div className={css.formFrame}>
+          <label className={css.fieldTitle}>Enter your email</label>
+          <Field name="email" className={css.formField} placeholder="E-mail" />
+        </div>
+        <ErrorMessage
+          name="email"
+          component="span"
+          className={css.errorMessage}
+        />
+        <div className={css.formFrame}>
+          <label className={css.fieldTitle}>Enter your password</label>
           <Field
             name="password"
+            className={css.formField}
+            placeholder="Password"
+          />
+        </div>
+        <ErrorMessage
+          name="password"
+          component="span"
+          className={css.errorMessage}
+        />
+        <div className={css.formFrame}>
+          <label className={css.fieldTitle}>Repeat password</label>
+          <Field
+            name="repeatPassword"
             type="password"
             className={css.formField}
-            placeholder="Enter your password"
+            placeholder="Repeat password"
           />
-          <ErrorMessage
-            name="password"
-            component="span"
-            className={css.errorMessage}
-          />
-          <button type="submit" className={css.registerBtn}>
-            Register
-          </button>
-          <p className={css.text}>
-            You already have account?
-            <Link to="/login" className={css.link}>
-              Sign in
-            </Link>
-          </p>
-        </Form>
-      </Formik>
-    </div>
+        </div>
+        <ErrorMessage
+          name="repeatPassword"
+          component="span"
+          className={css.errorMessage}
+        />
+        <button type="submit" className={css.registerBtn}>
+          <p className={css.registerBtnText}>Sign Up</p>
+        </button>
+        <p className={css.text}>
+          <Link to="/login" className={css.link}>
+            Sign in
+          </Link>
+        </p>
+      </Form>
+    </Formik>
   );
 };
 

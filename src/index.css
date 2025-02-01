@@ -1,35 +1,65 @@
+@import-normalize; /* bring in normalize.css styles */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color-white: #ffffff;
+  --primary-color-black: #2f2f2f;
+  --primary-color-blue: #407bff;
+  --secondary-color-red: #ef5050;
+  --secondary-color-orange: #ff9d43;
+  --secondary-color-blue-1: #ecf2ff;
+  --secondary-color-blue-2: #d7e3ff;
+  --secondary-color-blue-3: #9ebbff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --backdrop-color-black: rgba(0, 0, 0, 0.8);
+  --backdrop-color-loader: rgba(255, 255, 255, 0.4);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  cursor: url('./images/cursor/cursor.svg'), auto;
+}
+
+button,
+a {
+  cursor: url('./images/cursor/cursor.svg'), auto;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='password'] {
+  cursor: text;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-li {
-  list-style: none;
+.body-scroll-lock {
+  overflow: hidden;
 }
